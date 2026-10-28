@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#4471 · split date problems · support kb</title>
+    <style>
+      :root {
+        --bg: #fbfaf7;
+        --fg: #1d1d1b;
+        --muted: #6b6a66;
+        --line: #e3e0d8;
+        --accent: #2f6f5e;
+        --warn: #b4501f;
+        --note-bg: #eef5f2;
+        --mono: ui-monospace, "Cascadia Code", Menlo, monospace;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #171716;
+          --fg: #ecebe6;
+          --muted: #9c9a93;
+          --line: #34332f;
+          --accent: #6fbfa6;
+          --warn: #f0905d;
+          --note-bg: #1d2c27;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font: 16px/1.6 system-ui, sans-serif;
+      }
+
+      .kb {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 2rem 16px 4rem;
+      }
+
+      .crumb {
+        color: var(--muted);
+        font: 0.8rem var(--mono);
+        text-decoration: none;
+      }
+
+      h1 {
+        margin: 0.25rem 0 0.5rem;
+        line-height: 1.2;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .status {
+        border: 1px solid var(--line);
+        border-radius: 99px;
+        padding: 0 0.6rem;
+      }
+
+      .kb main {
+        margin-top: 2rem;
+      }
+
+      .kb a {
+        color: var(--accent);
+      }
+
+      .kb code {
+        font-family: var(--mono);
+        font-size: 0.88em;
+      }
+
+      .callout {
+        margin: 1rem 0;
+        border-left: 4px solid var(--accent);
+        padding: 0.5rem 1rem;
+        background: var(--note-bg);
+      }
+
+      .sum {
+        font-size: 1.1rem;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        margin: 1rem 0;
+        min-width: 720px;
+        border-collapse: collapse;
+        font-size: 0.92rem;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--line);
+        padding: 0.35rem 0.5rem;
+        text-align: left;
+      }
+
+      .tags,
+      .note,
+      figcaption {
+        color: var(--muted);
+      }
+
+      .tags {
+        font-size: 0.85em;
+      }
+
+      .note,
+      figcaption {
+        font-size: 0.85rem;
+      }
+
+      svg {
+        width: 100%;
+        max-width: 640px;
+      }
+
+      .in {
+        fill: var(--warn);
+      }
+
+      .merged {
+        fill: var(--accent);
+      }
+
+      svg text {
+        fill: var(--muted);
+        font: 8px var(--mono);
+        text-anchor: middle;
+      }
+
+      .key {
+        display: inline-block;
+        width: 0.7em;
+        height: 0.7em;
+        border-radius: 2px;
+      }
+
+      .key.in {
+        background: var(--warn);
+      }
+
+      .key.merged {
+        background: var(--accent);
+      }
+
+      .stamp {
+        margin: 2rem 0 0;
+        color: var(--muted);
+        font: 0.85rem var(--mono);
+      }
+
+      .stamp b {
+        color: var(--accent);
+        letter-spacing: 0.04em;
+      }
+
+      footer {
+        margin-top: 3rem;
+        border-top: 1px solid var(--line);
+        padding-top: 1rem;
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <article class="kb">
+      <header>
+        <a class="crumb" href="/kb">support desk · kb</a>
+        <h1>#4471 · split date problems</h1>
+        <p class="meta">
+          <span>owner <b>support desk</b></span>
+          <span class="status known">known</span>
+          <span>reviewed 2026-10-28 · 0 days ago</span>
+        </p>
+      </header>
+      <main>
+        <p>
+          The desk marked #4471 known as one date bug. Its export contains overlapping pages, so
+          count each report ID once. The cause depends on the tenant's locale, booking form, and
+          intake channel; the intake tag is only a guess.
+        </p>
+
+        <h2>Reports by cause</h2>
+        <aside class="callout">
+          The component deduplicates report IDs before counting. The two causes in #4471 have
+          separate follow-up issues:
+          <a href="https://github.com/filipzinowiew-allegro/megadev/issues/2">the shared parser</a>
+          and
+          <a href="https://github.com/filipzinowiew-allegro/megadev/issues/1">the booking-v3 form hint</a>.
+        </aside>
+
+        <p class="sum"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>cause</th>
+                <th>reports</th>
+                <th>tagged as</th>
+                <th>tenants</th>
+                <th>seen</th>
+                <th>follow-up issue</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>parser</code></td>
+                <td>379</td>
+                <td class="tags">parser ×356 · hint ×23</td>
+                <td>11</td>
+                <td>2026-04-01 → 2026-10-04</td>
+                <td><a href="https://github.com/filipzinowiew-allegro/megadev/issues/2">#2</a></td>
+              </tr>
+              <tr>
+                <td><code>hint</code></td>
+                <td>33</td>
+                <td class="tags">hint ×18 · parser ×15</td>
+                <td>3</td>
+                <td>2026-04-17 → 2026-09-22</td>
+                <td><a href="https://github.com/filipzinowiew-allegro/megadev/issues/1">#1</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p>
+
+        <h2>Why these are separate</h2>
+        <ul>
+          <li>
+            <strong>Shared parser.</strong> The shared parser reads every date month first.
+            Day-first tenant dates flip. This cause covers app and email reports, booking-v2 form
+            reports, and booking-v3 reports not submitted through its form. See
+            <a href="https://github.com/filipzinowiew-allegro/megadev/issues/2">issue #2</a>.
+          </li>
+          <li>
+            <strong>booking-v3 form hint.</strong> The form shows <code>MM/DD/YYYY</code>, but
+            day-first tenants' form submissions are read in tenant order. People follow the hint,
+            so month and day flip. See
+            <a href="https://github.com/filipzinowiew-allegro/megadev/issues/1">issue #1</a>.
+          </li>
+        </ul>
+
+        <h2>When reports arrived</h2>
+        <figure>
+          <svg viewBox="0 0 648 140" role="img" aria-label="reports received and merged into #4471, per week">
+            <rect class="in" x="2" y="106.2963" width="9" height="3.7037" />
+            <rect class="merged" x="12" y="110.0000" width="9" height="0.0000" />
+            <text x="12" y="128">03-30</text>
+            <rect class="in" x="26" y="104.1799" width="9" height="5.8201" />
+            <rect class="merged" x="36" y="110.0000" width="9" height="0.0000" />
+            <rect class="in" x="50" y="102.5926" width="9" height="7.4074" />
+            <rect class="merged" x="60" y="110.0000" width="9" height="0.0000" />
+            <rect class="in" x="74" y="99.9471" width="9" height="10.0529" />
+            <rect class="merged" x="84" y="110.0000" width="9" height="0.0000" />
+            <rect class="in" x="98" y="101.5344" width="9" height="8.4656" />
+            <rect class="merged" x="108" y="110.0000" width="9" height="0.0000" />
+            <text x="108" y="128">04-27</text>
+            <rect class="in" x="122" y="103.6508" width="9" height="6.3492" />
+            <rect class="merged" x="132" y="110.0000" width="9" height="0.0000" />
+            <rect class="in" x="146" y="105.7672" width="9" height="4.2328" />
+            <rect class="merged" x="156" y="110.0000" width="9" height="0.0000" />
+            <rect class="in" x="170" y="103.6508" width="9" height="6.3492" />
+            <rect class="merged" x="180" y="110.0000" width="9" height="0.0000" />
+            <rect class="in" x="194" y="102.5926" width="9" height="7.4074" />
+            <rect class="merged" x="204" y="110.0000" width="9" height="0.0000" />
+            <text x="204" y="128">05-25</text>
+            <rect class="in" x="218" y="101.0053" width="9" height="8.9947" />
+            <rect class="merged" x="228" y="110.0000" width="9" height="0.0000" />
+            <rect class="in" x="242" y="101.5344" width="9" height="8.4656" />
+            <rect class="merged" x="252" y="110.0000" width="9" height="0.0000" />
+            <rect class="in" x="266" y="101.0053" width="9" height="8.9947" />
+            <rect class="merged" x="276" y="110.0000" width="9" height="0.0000" />
+            <rect class="in" x="290" y="104.1799" width="9" height="5.8201" />
+            <rect class="merged" x="300" y="110.0000" width="9" height="0.0000" />
+            <text x="300" y="128">06-22</text>
+            <rect class="in" x="314" y="102.0635" width="9" height="7.9365" />
+            <rect class="merged" x="324" y="10.0000" width="9" height="100.0000" />
+            <rect class="in" x="338" y="99.9471" width="9" height="10.0529" />
+            <rect class="merged" x="348" y="100.4762" width="9" height="9.5238" />
+            <rect class="in" x="362" y="101.0053" width="9" height="8.9947" />
+            <rect class="merged" x="372" y="100.4762" width="9" height="9.5238" />
+            <rect class="in" x="386" y="102.0635" width="9" height="7.9365" />
+            <rect class="merged" x="396" y="102.0635" width="9" height="7.9365" />
+            <text x="396" y="128">07-20</text>
+            <rect class="in" x="410" y="99.9471" width="9" height="10.0529" />
+            <rect class="merged" x="420" y="99.9471" width="9" height="10.0529" />
+            <rect class="in" x="434" y="105.7672" width="9" height="4.2328" />
+            <rect class="merged" x="444" y="105.7672" width="9" height="4.2328" />
+            <rect class="in" x="458" y="102.0635" width="9" height="7.9365" />
+            <rect class="merged" x="468" y="102.0635" width="9" height="7.9365" />
+            <rect class="in" x="482" y="99.4180" width="9" height="10.5820" />
+            <rect class="merged" x="492" y="99.4180" width="9" height="10.5820" />
+            <text x="492" y="128">08-17</text>
+            <rect class="in" x="506" y="102.5926" width="9" height="7.4074" />
+            <rect class="merged" x="516" y="102.5926" width="9" height="7.4074" />
+            <rect class="in" x="530" y="98.8889" width="9" height="11.1111" />
+            <rect class="merged" x="540" y="98.8889" width="9" height="11.1111" />
+            <rect class="in" x="554" y="99.4180" width="9" height="10.5820" />
+            <rect class="merged" x="564" y="99.4180" width="9" height="10.5820" />
+            <rect class="in" x="578" y="102.0635" width="9" height="7.9365" />
+            <rect class="merged" x="588" y="102.0635" width="9" height="7.9365" />
+            <text x="588" y="128">09-14</text>
+            <rect class="in" x="602" y="96.7725" width="9" height="13.2275" />
+            <rect class="merged" x="612" y="97.8307" width="9" height="12.1693" />
+            <rect class="in" x="626" y="102.0635" width="9" height="7.9365" />
+            <rect class="merged" x="636" y="101.0053" width="9" height="8.9947" />
+          </svg>
+          <figcaption>
+            <span class="key in"></span> received · <span class="key merged"></span> merged into #4471 · per week
+          </figcaption>
+        </figure>
+
+        <p class="stamp">desk ref <b>DR-KJWR-WGN6</b></p>
+      </main>
+      <footer>Pages are written by people. Tables and charts are built from data at render time.</footer>
+    </article>
+  </body>
+</html>
