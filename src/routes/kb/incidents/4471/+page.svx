@@ -43,7 +43,7 @@ and [the booking-v3 form hint](https://github.com/filipzinowiew-allegro/megadev/
   [issue #2](https://github.com/filipzinowiew-allegro/megadev/issues/2).
 - **booking-v3 form hint.** The form shows `MM/DD/YYYY`, but day-first tenants' form submissions
   are read in tenant order. People follow the hint, so month and day flip. The desk will not fix
-  it because booking-v3 was retired; issue #1 is closed as not planned. See
+  it: "won't fix: booking-v3 form retired"; issue #1 is closed as not planned. See
   [issue #1](https://github.com/filipzinowiew-allegro/megadev/issues/1).
 
 ## When reports arrived
