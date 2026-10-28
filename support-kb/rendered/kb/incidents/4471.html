@@ -196,18 +196,18 @@
       </header>
       <main>
         <p>
-          The desk marked #4471 known as one date bug. Its export contains overlapping pages, so
-          count each report ID once. The cause depends on the tenant's locale, booking form, and
-          intake channel; the intake tag is only a guess.
+          The desk marked #4471 known as one date bug, then closed it on 5 October. Its export
+          contains overlapping pages, so count each report ID once. The cause depends on the
+          tenant's locale, booking form, and intake channel; the intake tag is only a guess.
         </p>
 
         <h2>Reports by cause</h2>
         <aside class="callout">
-          The component deduplicates report IDs before counting. The two causes in #4471 have
-          separate follow-up issues:
-          <a href="https://github.com/filipzinowiew-allegro/megadev/issues/2">the shared parser</a>
-          and
-          <a href="https://github.com/filipzinowiew-allegro/megadev/issues/1">the booking-v3 form hint</a>.
+          The component deduplicates report IDs before counting. Engineering fixed the shared
+          parser with <code>fix(dates): parse dd/mm for eu locales</code>. The desk will not fix
+          the booking-v3 form hint because the form was retired. See
+          <a href="https://github.com/filipzinowiew-allegro/megadev/issues/2">issue #2</a> and
+          <a href="https://github.com/filipzinowiew-allegro/megadev/issues/1">issue #1</a>.
         </aside>
 
         <p class="sum"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p>
@@ -250,13 +250,14 @@
           <li>
             <strong>Shared parser.</strong> The shared parser reads every date month first.
             Day-first tenant dates flip. This cause covers app and email reports, booking-v2 form
-            reports, and booking-v3 reports not submitted through its form. See
+            reports, and booking-v3 reports not submitted through its form. Engineering fixed it
+            with <code>fix(dates): parse dd/mm for eu locales</code>. See
             <a href="https://github.com/filipzinowiew-allegro/megadev/issues/2">issue #2</a>.
           </li>
           <li>
             <strong>booking-v3 form hint.</strong> The form shows <code>MM/DD/YYYY</code>, but
             day-first tenants' form submissions are read in tenant order. People follow the hint,
-            so month and day flip. See
+            so month and day flip. The desk will not fix it because booking-v3 was retired. See
             <a href="https://github.com/filipzinowiew-allegro/megadev/issues/1">issue #1</a>.
           </li>
         </ul>
