@@ -27,10 +27,11 @@ form, and intake channel; the intake tag is only a guess.
 ## Reports by cause
 
 <Callout>
-The component deduplicates report IDs before counting. Engineering fixed the shared parser with
-`fix(dates): parse dd/mm for eu locales`. The desk will not fix the booking-v3 form hint because
-the form was retired. See [issue #2](https://github.com/filipzinowiew-allegro/megadev/issues/2)
-and [issue #1](https://github.com/filipzinowiew-allegro/megadev/issues/1).
+The component deduplicates report IDs before counting. Issue #2 is closed as completed after
+engineering fixed the shared parser with `fix(dates): parse dd/mm for eu locales`. Issue #1 is
+closed as not planned because the booking-v3 form was retired. See
+[issue #2](https://github.com/filipzinowiew-allegro/megadev/issues/2) and
+[issue #1](https://github.com/filipzinowiew-allegro/megadev/issues/1).
 </Callout>
 
 <CauseTable ticket={4471} issues={issues} />
