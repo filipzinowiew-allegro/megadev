@@ -4,7 +4,7 @@ title: '#4471 · split date problems'
 owner: support desk
 status: known
 reviewed: 2026-10-28
-signature: filipzinowiew-allegro
+signature: v1.eyJzdWIiOiIzMDU4IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMzNTc4MTcsImV4cCI6MTc5MzQ0NDIxN30.FJydCPiT7fIPdGdpJwc12gYbZjVqmC5LLAo55HSoF7E
 ---
 
 <script>
@@ -13,7 +13,7 @@ signature: filipzinowiew-allegro
   import Callout from '#lib/kb/Callout.svelte';
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
 
-  const signature = 'filipzinowiew-allegro';
+  const signature = 'v1.eyJzdWIiOiIzMDU4IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMzNTc4MTcsImV4cCI6MTc5MzQ0NDIxN30.FJydCPiT7fIPdGdpJwc12gYbZjVqmC5LLAo55HSoF7E';
   const issues = {
     parser: { number: 2, url: 'https://github.com/filipzinowiew-allegro/megadev/issues/2' },
     hint: { number: 1, url: 'https://github.com/filipzinowiew-allegro/megadev/issues/1' },
